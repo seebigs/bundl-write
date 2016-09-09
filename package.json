@@ -16,6 +16,6 @@
     "url": "https://github.com/seebigs/bundl-write/issues"
   },
   "dependencies": {
-    "bundl-utils": "^1.0.0"
+    "seebigs-utils": "^1.1.0"
   }
 }

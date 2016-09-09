@@ -3,7 +3,7 @@
  */
 
 var path = require('path');
-var utils = require('bundl-utils');
+var utils = require('seebigs-utils');
 
 module.exports = function (options) {
     options = options || {};
