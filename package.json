@@ -1,6 +1,6 @@
 {
   "name": "bundl-write",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Write content to disk",
   "main": "index.js",
   "scripts": {
