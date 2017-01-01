@@ -22,7 +22,9 @@ module.exports = function (options) {
         }
 
         this.log('Writing ' + destPath);
-        utils.writeFile(destPath, r.contents, done);
+        utils.writeFile(destPath, contents, function () {
+            done(contents);
+        });
     }
 
     return {
