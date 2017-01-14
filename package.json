@@ -17,5 +17,9 @@
   },
   "dependencies": {
     "seebigs-utils": "^1.1.0"
+  },
+  "devDependencies": {
+    "feather-test": "^1.1.1",
+    "seebigs-utils": "^1.2.1"
   }
 }

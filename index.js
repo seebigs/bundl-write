@@ -10,25 +10,25 @@ module.exports = function (options) {
 
     if (typeof options === 'string') {
         options = {
-            dir: options
+            outputDir: options
         };
     }
 
-    function writeEach (contents, r, done) {
+    function one (contents, r, done) {
         var destPath = r.dest;
 
-        if (options.dir) {
-            destPath = path.resolve(options.dir, r.name);
+        if (options.outputDir) {
+            destPath = path.resolve(options.outputDir, r.name);
         }
 
-        this.log('Writing ' + destPath);
+        this.log && this.log('Writing ' + destPath);
         utils.writeFile(destPath, contents, function () {
             done(contents);
         });
     }
 
     return {
-        each: writeEach
+        one: one
     };
 
 };
