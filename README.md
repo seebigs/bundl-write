@@ -23,7 +23,7 @@ bundl(targets)
     .then(minify())
     .then(rename('.min.js'))
     .then(write())
-    .all();
+    .go();
 ```
 
 ## Options
@@ -34,14 +34,14 @@ bundl()
     .add(targets, { outputDir: '../one' })
     .add(targets, { outputDir: '../two' })
     .then(write())
-    .all();
+    .go();
 ```
 
 ### Override outputDir with a String
 ```js
 bundl(targets)
     .then(write('../dist'))
-    .all();
+    .go();
 ```
 
 ### Override with an options Object
@@ -52,5 +52,5 @@ var options = {
 
 bundl(targets)
     .then(write(options))
-    .all();
+    .go();
 ```
