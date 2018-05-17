@@ -4,7 +4,7 @@
   "description": "Write content to disk",
   "main": "index.js",
   "scripts": {
-    "test": "node test/automated"
+    "test": "node test"
   },
   "repository": {
     "type": "git",
@@ -16,10 +16,13 @@
     "url": "https://github.com/seebigs/bundl-write/issues"
   },
   "dependencies": {
-    "seebigs-utils": "^1.1.0"
+    "deep-extend": "^0.5.0",
+    "prettier-bytes": "^1.0.4",
+    "seebigs-utils": "^1.1.0",
+    "uglify-js": "^3.3.22"
   },
   "devDependencies": {
-    "feather-test": "^1.1.1",
-    "seebigs-utils": "^1.2.1"
+    "feather-test": "^4.0.0",
+    "seebigs-utils": "^1.4.1"
   }
 }

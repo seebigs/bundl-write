@@ -3,6 +3,7 @@
  */
 
 var path = require('path');
+var prettierBytes = require('prettier-bytes');
 var utils = require('seebigs-utils');
 
 module.exports = function (options) {
@@ -14,21 +15,24 @@ module.exports = function (options) {
         };
     }
 
-    function one (contents, r, done) {
+    function write (r, done) {
         var destPath = r.dest;
+        var contents = r.contents.getString();
+        var contentsSize = Buffer.byteLength(contents, 'utf8');
 
         if (options.outputDir) {
             destPath = path.resolve(options.outputDir, r.name);
         }
 
-        this.log && this.log('Writing ' + destPath);
-        utils.writeFile(destPath, contents, function () {
-            done(contents);
-        });
+        var msg = 'Writing ' + destPath + ' ' + prettierBytes(contentsSize);
+        this.log && this.log.cyan && this.log.cyan(msg);
+        utils.writeFile(destPath, contents, done);
     }
 
     return {
-        one: one
+        name: 'write',
+        stage: 'stringy',
+        exec: write,
     };
 
 };

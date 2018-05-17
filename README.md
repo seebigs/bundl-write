@@ -13,12 +13,12 @@ $ npm install --save-dev bundl-write
 ## Use
 
 ```js
-var bundl = require('bundl');
+var Bundl = require('bundl');
 var minify = require('bundl-minify');
 var rename = require('bundl-rename');
 var write = require('bundl-write');
 
-bundl(targets)
+new Bundl(targets)
     .then(write())
     .then(minify())
     .then(rename('.min.js'))
@@ -30,7 +30,7 @@ bundl(targets)
 
 ### Defaults to the `outputDir` of each added bundle
 ```js
-bundl()
+new Bundl()
     .add(targets, { outputDir: '../one' })
     .add(targets, { outputDir: '../two' })
     .then(write())
@@ -39,7 +39,7 @@ bundl()
 
 ### Override outputDir with a String
 ```js
-bundl(targets)
+new Bundl(targets)
     .then(write('../dist'))
     .go();
 ```
@@ -50,7 +50,7 @@ var options = {
     outputDir: '../dist'
 };
 
-bundl(targets)
+new Bundl(targets)
     .then(write(options))
     .go();
 ```
